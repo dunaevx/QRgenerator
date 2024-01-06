@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img class="log-img" src="images/social/_c775d272-5739-44f5-83f8-cf8c6c21a4fa.svg" alt="">
+            <h2>QRGenerator</h2>
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="https://github.com/dunaevx">
+                        <img  title="GitHub" src="images/social/Github - Negative.svg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="t.me/hankingdm">
+                        <img title="Telegram" src="images/social/Telegram - Negative.svg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/dunaev.x?igsh=emE5MWtrcG9iNnZq">
+                        <img title="Instagram" src="images/social/Instagram - Negative.svg" alt="">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="content">
+            <div class="form">
+                <h1>QR Code generator using library qrcodejs</h1>
+                <form>
+                    <div class="form-wrap">
+                        <div class="input-container">
+                            <input type="url" id="website" name="website" placeholder="" class="myInput" required/>
+                            <label for="name" class="form__label">Your website</label>	
+                        </div>
+                        
+                            
+                    </div>
+                </form>                
+            </div>
+            <div class="send-and-color">
+                <button type="button" onclick="generateQRCode()">
+                    Generate QR Code
+                </button>  
+                <div class="tool">
+                    <svg class="color-icons" id="color-icons-id" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <rect width="48" height="48" fill="url(#pattern0)"/>
+                        <defs>
+                        <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                        <use xlink:href="#image0_1207_2" transform="scale(0.0208333)"/>
+                        </pattern>
+                        <image id="image0_1207_2" width="48" height="48" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC4klEQVR4nO2ZPWgUQRTHx48oapUEFaJYKAqitomYlFEManeIWPtZWUajlkk6US4hjdZ+JDZRUFAQsVDb5BoRC42FEg1+wp0oPxluhHWYnZ2bnd3bg/vDNsub/7z/zrw3780K0UYbbaQGsBzYC4wAd4EKsAT8Us+SejcDXAD65BjRbACbgXHgPY1jARgDNjXD8W5gCqiRHlVgEujKy/ljwCfCYxE4mqXjK9VXbxQdwHqgFzgJ3AS+Wewn5FyhnV8D3PP5rDF8a4ETwOuYYbNyzpBf3sv5OAER7g5gWMWBSUT6lfDcNk4C/gHYB3wwDC+LAAGbCg3MtQWYN1CUfJ3vUpkhFwEREfpKyIzXLfLeOj4CJIB+Q0yUfU7YWjMESKhyIwopqEe4QpUHQeA8aQTAKuCNRjUqXACs8KxtggmQAE5pVG+dCkBVVQZD4oQxANYB3zW6XpeBI0UQIAHc1uiGRRJUPV8UAac1ummXQZUCCejT6OZcBn0ukIANGt2iy6BagQSs1uiqLSVAAhgELgMvpG+ilbaQDmBHSwWxF4qURkWgQio3AdRbTb1fvpU29+YpYKeBouJzy7aQtwDqtc+ogeIncKBREWNZCwDOAg+BQ8AR4GMC1VNgD3AOeGnNSKqhqWYlQJ2wX1JS309ahckMBVwPwQ0cTLr/DN7UA7uBP5YhP4A7wBW1bWywB7i8q8xAQCfwKMb8FbBVsy8Bvw228t1FqwBFMBFSQCTTTRvM+2Psrxpsjyc6H+mRvU9nC+8NzVT+BFlmKeh0DDkJiFzuzrasgMglbznjLTQQY3/NewsZyEoOh04Ug4YgfmwJ4m2GRBIXxJd8RXSq1XA57P6bBNjlkEZnVBp9lsDdWJ1kENKj6pd3lkmeZ3iQDaUSoO1p+QvpvNrbc6qzq6lnu2a/EfiaaSmRNYAzwANVzB2O+cERxRN1iicXc80A9WYmrpzeL1oBmBua+Wb75Qy1CnpsWFvKv9C+hxwitoFoAAAAAElFTkSuQmCC"/>
+                        </defs>
+                    </svg>
+                    <div class="tooltip">
+                    <span class="tooltiptext">Please use only dark colors for better QR code recognition</span>
+                    </div>
+                </div>
+                <div id="color-pattern">
+                    <input type="color" value="#000000" id="color-pattern-id" name="body" value="#f6b73c" />
+                </div>
+            </div>               
+            <div id="qrcode-container">
+                <div id="qrcode" class="qrcode"></div>
+                <img id="output-image" src="images/_c775d272-5739-44f5-83f8-cf8c6c21a4fa (2).svg" alt="">
+            </div>
+            </div>
+        </div>
+    </div>   
+</body>
+<script src="script.js"></script>
+<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+</html>

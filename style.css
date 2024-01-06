@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+html,
+body{
+    height: 100%;
+    width: auto;
+    
+    font-family: 'Open Sans', sans-serif;
+
+    background-image: url("images/desktop-wallpaper-digital-art-neon-bubbles-abstract-gradient.jpg");
+    background-repeat: no-repeat;
+    
+    background-size: cover;
+
+    color: #fff;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 50px 0px 50px;
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.container{
+    width: auto;
+    min-height: calc(100vh - 10vh);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.content{
+    margin-top: -30px;
+    padding: 25px 25px 30px 25px;
+  
+    display: block;
+    width: 350px;
+    height: 450px;
+    	
+    backdrop-filter: blur(5px);
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.input-container{
+	position:relative;
+	margin-bottom:25px;
+}
+.input-container label{
+	position:absolute;
+	top:0px;
+	left:0px;
+	font-size:16px;
+	color:#fff;	
+    pointer-events:none;
+	transition: all 0.5s ease-in-out;
+}
+.input-container input{ 
+  border:0;
+  border-bottom:1px solid #555;  
+  background:transparent;
+  width:350px;
+  padding:8px 0 5px 0;
+  font-size:16px;
+  color:#fff;
+}
+.input-container input:focus{ 
+ border:none;	
+ outline:none;
+ border-bottom:1px solid #e74c3c;	
+}
+
+.input-container input:focus ~ label,
+.input-container input:valid ~ label{
+	top:-12px;
+	font-size:12px;
+	
+}
+
+.send-and-color{
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#color-pattern{
+  position: absolute;
+  right: -65px;
+  top: -20px;
+
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+
+  width: 60px;
+  height: 35px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #fff;
+  border-radius: 5px;
+
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#color-pattern.color-pattern-show{ 
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#color-pattern-id{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+
+.tooltip {
+  position: relative;
+}
+
+.tooltiptext {
+  margin: 5px  0px 0px -10px;
+  padding: 5px;
+  
+  width: 350px;
+
+  color: #dcdcdc;
+  font-size: small;
+  text-align: center;
+  border-radius: 6px;
+
+  position: absolute;
+  z-index: 1;
+  visibility: hidden;
+  opacity: 0;
+
+  transition: opacity 0.5s;
+}
+
+.tool:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.qrcode > img {
+    border: 5px solid white;
+}
+
+.qrcode{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: center;
+    margin-top: 30px;
+    height: 177px;
+
+}
+
+#output-image{
+  display: none;
+
+  /*position: absolute;
+  top: 65%;
+  left: 41.5%; */
+
+  z-index: 100;
+  margin: -125px 140px;
+}
+
+svg {
+  filter: drop-shadow(0 2px 4px rgba(19, 19, 19, 0.368)) 
+          drop-shadow(0 7px 13px rgba(45, 35, 66, 0.3)) 
+          drop-shadow(0 -3px 0 #0000009c);
+          position: relative;
+          text-align: left;
+          text-decoration: none;
+          transition: box-shadow .15s,transform .15s;
+          user-select: none;
+          -webkit-user-select: none;
+          touch-action: manipulation;
+          white-space: nowrap;
+          will-change: box-shadow,transform;
+          font-size: 18px;
+}
+
+svg:focus{
+  filter: drop-shadow(0 0 0 1.5px #48484b) 
+          drop-shadow(0 2px 4px rgba(45, 35, 66, 0.4)) 
+          drop-shadow(0 7px 13px rgba(45, 35, 66, 0.3)) 
+          drop-shadow(0 -3px 0 #000000);  
+}
+
+svg:hover{
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.578)) 
+            drop-shadow(0 7px 13px rgba(45, 35, 66, 0.3)) 
+            drop-shadow(0 -3px 0 #000000 inset);
+}
+
+svg:active{
+  filter: drop-shadow(0 3px 7px #333333 inset);
+  transform: translateY(2px);
+}
+
+button{
+  align-items: center;
+  appearance: none;
+  background-color: rgb(0, 0, 0);
+  background: rgba(205, 214, 219, 0);
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgb(19, 19, 19) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#0000009c 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+
+button:focus {
+  box-shadow: #48484b 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #000000 0 -3px 0 inset;
+}
+
+button:hover {
+  box-shadow: rgba(0, 0, 0, 0.295) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #000000 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+button:active {
+  box-shadow: #333333 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+h1{
+    margin: 0px 0px 25px 0px;
+}
+
+form{
+    display: table-caption;
+}
+
+
+ul{
+  display: flex;
+  gap: 20px;
+}
+
+li{
+  list-style: none;
+}
